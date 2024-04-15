@@ -1,0 +1,135 @@
+$primary: #000000;
+$yellow: #F5B301;
+$yellow-opacity-8: rgba(245, 179, 1, 0.3);
+$OP-yellow: rgba(245, 179, 1, 0.3);
+
+$theme-colors: (
+    "primary": $primary,
+    "yellow": $yellow,
+    "yellow-opacity-8": $yellow-opacity-8,
+    "OP-yellow": $OP-yellow,
+);
+
+$utilities: (
+    "rounded": (
+        "property": "border-radius",
+        class: "rounded",
+        "values": (
+            null: 1rem,
+            circle: 50%,
+        )
+    )
+);
+
+
+@import "./bootstrap/scss/bootstrap";
+
+/** HEADER **/
+
+.announcement-bar {
+    background-color: $OP-yellow;
+    border-bottom: solid $primary;
+    font-size: 0.8rem;
+
+&__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    li {
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
+        .bi {
+            background-color: rgba(245, 179, 1, 0.8);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height:30px;
+            margin-right:6px;
+            margin-top:2px;
+            margin-bottom: 2px;
+        }
+    }
+}
+}
+
+
+/* MAIN MENU */
+.main-navigation {
+    font-weight: 600;
+    background-color: $primary !important;
+
+    .current-menu-item {
+        background-color: rgba(24, 18, 2, 0.5);
+    }
+
+    a {
+        color: white;
+        padding: 0.6rem 1.4rem;
+    }
+    a:hover {
+        background-color: $yellow;
+        color: $primary;
+        
+    }
+
+    .menu-toggle {
+        background-color: $yellow;
+        color:White;
+        border: none;
+    }
+
+
+}
+
+/** Search bar **/
+.aws-container .aws-search-field {
+        font-size: 0.9rem;
+        border-radius: 25px 0 0 25px !important;
+    }
+
+    .aws-container .aws-search-form .aws-form-btn {
+        border-radius: 0 25px 25px 0 !important;
+    }
+
+
+/** FRONT PAGE **/
+
+/****** SLIDER ******/
+.carousel {
+    .carousel-control-prev .carousel-control-next {
+        width: 5%;
+    }
+}
+
+
+/****** CATEGORIES ******/
+.categories {
+    .categories__col {
+        height:212px;
+        position:relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+    }
+
+    @include media-breakpoint-up(md) {
+        .categories__col {
+            height: 336px;
+        }
+    }
+}
+
+
+
+    @media only screen and (max-width: 700px) {
+        .announcement-bar {
+         display: none;
+        }
+    }
